@@ -85,13 +85,13 @@ Blah blah
 
 ## About the team
 
-#<img src="pics/2.jpeg" alt="don" width="300"/>
-#<br>
+<img src="pics/2.jpeg" alt="don" width="300"/>
+<br>
 Wasti is a Senior '22 Finance major with minors in Data Science and Mathematics. Upon graduation he will be a Masters of Financial Engineering candidate starting Fall 2022 at Lehigh.
 
 <br><br><br>
 
-<img src="pics/Headshot.jpeg" alt="Eric" width="300"/>
+<img src="pics/Headshot.JPEG" alt="Eric" width="300"/>
 <br>
 Eric is a Senior '22 studying Finance. Upon graduation he will begin his career as a Financial Services Advisory Associate at KPMG in their NYC Office.
 
