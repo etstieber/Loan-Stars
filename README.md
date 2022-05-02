@@ -15,6 +15,7 @@ To see our complete analysis file, click [here](https://github.com/julioveracruz
     5. [Model Selection](#MS)
 3. [Analysis](#Analysis)
 4. [Conclusion](#conclusion)
+5. [About the Team](#about)
 
 ## Introduction  <a name="introduction"></a>
 
@@ -83,7 +84,7 @@ xxx
 
 
 
-## About the team
+## About the Team <a name="about"></a>
 
 <img src="pics/2.jpeg" alt="don" width="300"/>
 <br>
