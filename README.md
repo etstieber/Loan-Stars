@@ -93,13 +93,13 @@ Wasti is a Senior '22 Finance major with minors in Data Science and Mathematics.
 
 <img src="pics/Headshot.jpg" alt="Eric" width="300"/>
 <br>
-Eric is a senior '22 studying Finance. Upon graduation he will begin his career as a Financial Services Advisory Associate at KPMG in their NYC Office.
+Eric is a Senior '22 studying Finance. Upon graduation he will begin his career as a Financial Services Advisory Associate at KPMG in their NYC Office.
 
 <br><br><br>
 
 <img src="pics/CompositePicture.jpg" alt="Colin" width="300"/>
 <br>
-Colin senior '22 studying Finance with a minor in Psychology.   
+Colin is a Senior '22 studying Finance with a minor in Psychology.   
 
 
 
