@@ -1,4 +1,4 @@
-# Welcome to our [team project website!](https://julioveracruz.github.io/testwebsite/)
+# Welcome to our [team project website!](https://etstieber.github.io/Loan-Stars/#MS)
 
 This website showcases our final project for FIN 377 - Data Science for Finance course at Lehigh University.
 
@@ -13,7 +13,7 @@ To see our complete analysis file, click [here](https://github.com/julioveracruz
     3. [Pre-processing](#PP)
     4. [Optimizing](#Op)
     5. [Model Selection](#MS)
-3. [Analysis Section](#section3)
+3. [Analysis](#Analysis)
 4. [Summary](#summary)
 
 ## Introduction  <a name="introduction"></a>
@@ -60,10 +60,8 @@ Model Selection Code Here.
 **You have to copy in output/figures from the notebooks.**
 
 
-### Subsection 2 <a name="subsec2-2"></a>
-This is a subsection, formatted in heading 3 style
 
-## Analysis Section <a name="section3"></a>
+## Analysis <a name="Analysis"></a>
 
 Here are some graphs that we created in our analysis. We saved them to the `pics/` subfolder and include them via the usual markdown syntax for pictures.
 
@@ -90,12 +88,20 @@ Blah blah
 <img src="pics/julio.jpg" alt="julio" width="300"/>
 <br>
 Eric is a senior studying Finance.
+
 <br><br><br>
+
 <img src="pics/don2.jpg" alt="don" width="300"/>
 <br>
+Colin xxx.
 
+<br><br><br>
+
+<img src="pics/don2.jpg" alt="don" width="300"/>
+<br>
+Wasti xxx.
 
 
 ## More 
 
-To view the GitHub repo for this website, click [here](https://github.com/donbowen/teamproject).
+To view the GitHub repo for this website, click [here](https://github.com/etstieber/Loan-Stars).
