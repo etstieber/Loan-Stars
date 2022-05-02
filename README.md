@@ -8,8 +8,11 @@ To see our complete analysis file, click [here](https://github.com/julioveracruz
 ## Table of contents
 1. [Introduction](#introduction)
 2. [Methodology](#meth)
-    1. [Data Collection](#Data Collection)
-    2. [Subsection](#subsec2-2)
+    1. [Data Collection](#DC)
+    2. [EDA](#EDA)
+    3. [Pre-processing](#PP)
+    4. [Optimizing](#Op)
+    5. [Model Selection](#MS)
 3. [Analysis Section](#section3)
 4. [Summary](#summary)
 
@@ -29,27 +32,30 @@ We outlined and completed this project through steps of:
 
 Here is some code that we used to develop our analysis.
  
-### Data Collection <a name="Data Collection"></a>
+### Data Collection <a name="DC"></a>
 ```python
 Data Collection Code Here.
 ``` 
  
-### EDA - Exploratory Data Analysis <a name="subsec2-1"></a>
+### EDA - Exploratory Data Analysis <a name="EDA"></a>
 ```python
 EDA Code Here.
 ```
 
-### Pre-processing <a name="subsec2-1"></a>
+### Pre-processing <a name="PP"></a>
 ```python
 PP Code Here.
 ``` 
 
-### Model Optimizing <a name="subsec2-1"></a>
+### Optimizing <a name="Op"></a>
 ```python
-PP Code Here.
+Optimizing Code Here.
 ``` 
 
-
+### Model Selection <a name="MS"></a>
+```python
+Model Selection Code Here.
+``` 
 
 **You have to copy in output/figures from the notebooks.**
 
