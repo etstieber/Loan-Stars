@@ -20,38 +20,23 @@ The main goal of this project is to explore efficient machine learning models th
 
 ## Methodology <a name="meth"></a>
 
-Here is some code that we used to develop our analysis. We outlined and completed this project through steps of:
+We outlined and completed this project through steps of:
 
 - Data Collection
 - EDA
 - Preprocessing
 - Optimizing
 - Model Selection
+
+Here is some code that we used to develop our analysis.
  
-Note that for the purposes of the website, you have to copy this code into the markdown file and  
-put the code inside trip backticks with the keyword `python`.
-
+### EDA - Exploratory Data Analysis <a name="subsec2-1"></a>
 ```python
-import seaborn as sns 
-iris = sns.load_dataset('iris') 
-
-print(iris.head(),  '\n---')
-print(iris.tail(),  '\n---')
-print(iris.columns, '\n---')
-print("The shape is: ",iris.shape, '\n---')
-print("Info:",iris.info(), '\n---') # memory usage, name, dtype, and # of non-null obs (--> # of missing obs) per variable
-print(iris.describe(), '\n---') # summary stats, and you can customize the list!
-print(iris['species'].value_counts()[:10], '\n---')
-print(iris['species'].nunique(), '\n---')
+EDA Code Here.
 ```
 
-Notice that the output does NOT show! **You have to copy in figures and tables from the notebooks.**
+**You have to copy in output/figures from the notebooks.**
 
-## Section <a name="section2"></a>
-Blah blah
-
-### Subsection 1 <a name="subsec2-1"></a>
-This is a subsection, formatted in heading 3 style
 
 ### Subsection 2 <a name="subsec2-2"></a>
 This is a subsection, formatted in heading 3 style
