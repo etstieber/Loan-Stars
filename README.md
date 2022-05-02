@@ -1,4 +1,4 @@
-# Welcome to our [team project website!](https://etstieber.github.io/Loan-Stars/#MS)
+# Loan Default Prediction
 
 This website showcases our final project for FIN 377 - Data Science for Finance course at Lehigh University.
 
