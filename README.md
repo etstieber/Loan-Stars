@@ -3,7 +3,7 @@
 This website showcases our final project for FIN 377 - Data Science for Finance course at Lehigh University.
 
 To see our complete analysis file, click [here](https://github.com/julioveracruz/testwebsite/blob/main/notebooks/example.ipynb).
-
+**update analysis file link**
 
 ## Table of contents
 1. [Introduction](#introduction)
@@ -14,7 +14,7 @@ To see our complete analysis file, click [here](https://github.com/julioveracruz
     4. [Optimizing](#Op)
     5. [Model Selection](#MS)
 3. [Analysis](#Analysis)
-4. [Summary](#summary)
+4. [Conclusion](#conclusion)
 
 ## Introduction  <a name="introduction"></a>
 
@@ -77,9 +77,9 @@ More analysis here.
 <br><br>
 More analysis.
 
-## Summary <a name="summary"></a>
+## Conclusion <a name="conclusion"></a>
 
-Blah blah
+xxx
 
 
 
@@ -87,19 +87,19 @@ Blah blah
 
 <img src="pics/2.jpeg" alt="don" width="300"/>
 <br>
-Wasti is a Senior '22 Finance major with minors in Data Science and Mathematics. Upon graduation he will be a Masters of Financial Engineering candidate starting Fall 2022 at Lehigh.
+Wasti is a Senior '22 Finance major with minors in Data Science and Mathematics. Upon graduation he will return to Lehigh as a Masters of Financial Engineering candidate.
 
 <br><br><br>
 
 <img src="pics/Headshot.JPEG" alt="Eric" width="300"/>
 <br>
-Eric is a Senior '22 studying Finance. Upon graduation he will begin his career as a Financial Services Advisory Associate at KPMG in their NYC Office.
+Eric is a Senior '22 Finance major. Upon graduation he will begin his career as a Financial Services Advisory Associate at KPMG in their NYC Office.
 
 <br><br><br>
 
 <img src="pics/CompositePicture.jpeg" alt="Colin" width="300"/>
 <br>
-Colin is a Senior '22 studying Finance with a minor in Psychology.   
+Colin is a Senior '22 Finance major with a minor in Psychology.   
 
 
 
