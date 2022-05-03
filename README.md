@@ -45,6 +45,8 @@ stfips = pd.read_csv("dev/state_fips.csv",skipinitialspace=True)
 state_list = pd.DataFrame(lending["addr_state"].unique())
 state_list = stfips.merge(state_list, on = "state", how  = "left")
 ``` 
+We read leanding data that we downloaded from kaggle. This is our main dataset and what we build off of to incorporate other variables for our algorithm. Additionally included is some of the add-on data and modifications such as inflation from FRED. You can see the full download_data workbook [here].(https://github.com/LeDataSciFi/project-loan-stars/blob/main/download_data.ipynb)
+
  
 ### EDA - Exploratory Data Analysis <a name="EDA"></a>
 ```python
