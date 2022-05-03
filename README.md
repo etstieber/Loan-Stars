@@ -19,7 +19,7 @@ To see our complete analysis file, click [here](https://github.com/julioveracruz
 
 ## Introduction  <a name="introduction"></a>
 
-The main goal of this project is to explore efficient machine learning models that can best predict loan defaults using data such as standard loan factors, macroeconomic data, and market conditions.  
+The main goal of this project is to explore machine learning models that can best predict loan defaults using data such as standard loan factors, macroeconomic data, and market conditions. 
 
 ## Methodology <a name="meth"></a>
 
@@ -35,7 +35,15 @@ Here is some code that we used to develop our analysis.
  
 ### Data Collection <a name="DC"></a>
 ```python
-Data Collection Code Here.
+lending = pd.read_csv("input/lending_data.csv")
+
+inf = pdr.DataReader(["T5YIE"], "fred",datetime(2005,1,1), end =datetime(2022,4,1) )
+inf.to_csv("input/inflation_exp.csv")
+
+stfips = pd.read_csv("dev/state_fips.csv",skipinitialspace=True)
+
+state_list = pd.DataFrame(lending["addr_state"].unique())
+state_list = stfips.merge(state_list, on = "state", how  = "left")
 ``` 
  
 ### EDA - Exploratory Data Analysis <a name="EDA"></a>
@@ -89,19 +97,14 @@ xxx
 <img src="pics/2.jpeg" alt="don" width="300"/>
 <br>
 Wasti is a Senior '22 Finance major with minors in Data Science and Mathematics. Upon graduation he will return to Lehigh as a Masters of Financial Engineering candidate.
-
 <br><br><br>
-
 <img src="pics/Headshot.JPEG" alt="Eric" width="300"/>
 <br>
 Eric is a Senior '22 Finance major. Upon graduation he will begin his career as a Financial Services Advisory Associate at KPMG in their NYC Office.
-
 <br><br><br>
-
 <img src="pics/CompositePicture.jpeg" alt="Colin" width="300"/>
 <br>
 Colin is a Senior '22 Finance major with a minor in Psychology.   
-
 
 
 ## More 
