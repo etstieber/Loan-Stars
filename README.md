@@ -66,11 +66,15 @@ lending.describe(percentiles=[.01,.05,.95,.99]).T.style.format('{:,.2f}')
 EDA is crucial to prepare data for machine learning. Above are main examples of EDA we did mostly on our base dataset, _lending_. We do this to better understand the data we are dealing with and how to best utilize it. The code shows us the columns, data shape, variabable summary statistics, percentiles, and even variables with missing values and what percentage is missing. We also dropped variables that had over 84% of values missing, as seen in the last code block.
 
 Below are some examples of **_Visual_** EDA that we did to get a better sense of how variables relate to each other and observe major trends.
-![](pics/int and def.png)
-![](pics/grade and def.png)
-![](pics/len and def.png)
 
-![](pics/inflation expectation.png)
+![](pics/int.png)
+<br><br>
+![](pics/grade.png)
+<br><br>
+![](pics/len.png)
+<br><br>
+![](pics/infl.png)
+<br><br>
 
 You can see the full status_report notebook of EDA [here](https://github.com/LeDataSciFi/project-loan-stars/blob/main/status_report.ipynb).
 <br><br>
