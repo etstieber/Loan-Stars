@@ -69,11 +69,19 @@ Below are some examples of **_Visual_** EDA that we did to get a better sense of
 
 ![](pics/int.png)
 <br><br>
+Loans that are defaulted have a higher interest rate, generally.
+<br><br>
 ![](pics/grade.png)
+<br><br>
+Doesn't seem to be any noticeable trends in loan grade and defaults.
 <br><br>
 ![](pics/len.png)
 <br><br>
+Longer loans by far have more defaults but also by far more loans.
+<br><br>
 ![](pics/infl.png)
+<br><br>
+Inflationary trends over time.
 <br><br>
 
 You can see the full status_report notebook of EDA [here](https://github.com/LeDataSciFi/project-loan-stars/blob/main/status_report.ipynb).
