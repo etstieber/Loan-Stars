@@ -42,7 +42,7 @@ stfips = pd.read_csv("dev/state_fips.csv",skipinitialspace=True)
 state_list = pd.DataFrame(lending["addr_state"].unique())
 state_list = stfips.merge(state_list, on = "state", how  = "left")
 ``` 
-We read leanding data that we downloaded from kaggle. This is our main dataset and what we build off of to incorporate other variables for our algorithm. Additionally included is some of the add-on data and modifications such as inflation from FRED. You can see the full download_data workbook [here (https://github.com/LeDataSciFi/project-loan-stars/blob/main/download_data.ipynb).
+We read leanding data that we downloaded from kaggle. This is our main dataset and what we build off of to incorporate other variables for our algorithm. Additionally included is some of the add-on data and modifications such as inflation from FRED. You can see the full download_data notebook [here](https://github.com/LeDataSciFi/project-loan-stars/blob/main/download_data.ipynb).
 <br>
 <br>
 ### EDA - Exploratory Data Analysis <a name="EDA"></a>
@@ -57,11 +57,18 @@ lending.describe(percentiles=[.01,.05,.95,.99]).T.style.format('{:,.2f}')
 (
     (lending.isna().sum(axis=0)/len(lending)*100) 
     .sort_values(ascending=False)[:13].to_frame(name='% missing') .style.format("{:.1f}")    
+    
+    perc = 84.0
+    min_count =  int(((100-perc)/100)*lending.shape[0] + 1)
+    lending = lending.dropna( axis=1,thresh=min_count)
 )
 ```
-EDA is crucial to prepare data for machine learning. Above are main examples of EDA we did on our base dataset, _lending_. We do this to better understand the data we are dealing with and how to best utilize it. The code shows us the columns, data shape, variabable summary statistics, percentiles, and even variables with missing values and what percentage is missing. 
+EDA is crucial to prepare data for machine learning. Above are main examples of EDA we did mostly on our base dataset, _lending_. We do this to better understand the data we are dealing with and how to best utilize it. The code shows us the columns, data shape, variabable summary statistics, percentiles, and even variables with missing values and what percentage is missing. We also dropped variables that had over 84% of values missing, as seen in the last code block.
 
 Below are some examples of **_Visual_** EDA that we did to get a better sense of how variables relate to each other and observe major trends.
+
+
+You can see the full status_report notebook of EDA [here](https://github.com/LeDataSciFi/project-loan-stars/blob/main/status_report.ipynb).
 <br>
 
 ### Pre-processing <a name="PP"></a>
