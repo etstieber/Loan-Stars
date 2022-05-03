@@ -82,11 +82,6 @@ Doesn't seem to be any noticeable trends in loan grade and defaults.
 Longer loans by far have more defaults but also by far more loans.
 <br><br>
 
-![](pics/infl.png)
-<br>
-Inflationary trends over time.
-<br><br>
-
 You can see the full status_report notebook of EDA [here](https://github.com/LeDataSciFi/project-loan-stars/blob/main/status_report.ipynb).
 <br><br>
 ### Pre-processing <a name="PP"></a>
