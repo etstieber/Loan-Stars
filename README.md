@@ -1,10 +1,8 @@
 # Loan Default Prediction
 
-This website showcases our final project for FIN 377 - Data Science for Finance course at Lehigh University.
-
-To see our complete analysis file, click [here](https://github.com/julioveracruz/testwebsite/blob/main/notebooks/example.ipynb).
+This website showcases our final project for FIN 377 - Data Science for Finance course at Lehigh University. To see our complete analysis file, click [here](https://github.com/julioveracruz/testwebsite/blob/main/notebooks/example.ipynb).
 **update analysis file link**
-
+<br>
 ## Table of contents
 1. [Introduction](#introduction)
 2. [Methodology](#meth)
@@ -16,11 +14,11 @@ To see our complete analysis file, click [here](https://github.com/julioveracruz
 3. [Analysis](#Analysis)
 4. [Conclusion](#conclusion)
 5. [About the Team](#about)
-
+<br><br>
 ## Introduction  <a name="introduction"></a>
 
 The main goal of this project is to explore machine learning models that can best predict loan defaults using data such as standard loan factors, macroeconomic data, and market conditions. 
-
+<br><br>
 ## Methodology <a name="meth"></a>
 
 We outlined and completed this project through steps of:
@@ -30,9 +28,8 @@ We outlined and completed this project through steps of:
 - Pre-processing
 - Optimizing
 - Model Selection
+<br>
 
-Here is some code that we used to develop our analysis.
- 
 ### Data Collection <a name="DC"></a>
 ```python
 lending = pd.read_csv("input/lending_data.csv")
@@ -46,31 +43,47 @@ state_list = pd.DataFrame(lending["addr_state"].unique())
 state_list = stfips.merge(state_list, on = "state", how  = "left")
 ``` 
 We read leanding data that we downloaded from kaggle. This is our main dataset and what we build off of to incorporate other variables for our algorithm. Additionally included is some of the add-on data and modifications such as inflation from FRED. You can see the full download_data workbook [here (https://github.com/LeDataSciFi/project-loan-stars/blob/main/download_data.ipynb).
-
- 
+<br>
+<br>
 ### EDA - Exploratory Data Analysis <a name="EDA"></a>
 ```python
-EDA Code Here.
+print('There are',lending.shape[1],"columns")
+lending.columns
+
+lending.describe().T.style.format('{:,.2f}')
+
+lending.describe(percentiles=[.01,.05,.95,.99]).T.style.format('{:,.2f}')
+
+(
+    (lending.isna().sum(axis=0)/len(lending)*100) 
+    .sort_values(ascending=False)[:13].to_frame(name='% missing') .style.format("{:.1f}")    
+)
 ```
+EDA is crucial to prepare data for machine learning. Above are main examples of EDA we did on our base dataset, _lending_. We do this to better understand the data we are dealing with and how to best utilize it. The code shows us the columns, data shape, variabable summary statistics, percentiles, and even variables with missing values and what percentage is missing. 
+
+Below are some examples of **_Visual_** EDA that we did to get a better sense of how variables relate to each other and observe major trends.
+<br>
 
 ### Pre-processing <a name="PP"></a>
 ```python
 PP Code Here.
 ``` 
+<br>
 
 ### Optimizing <a name="Op"></a>
 ```python
 Optimizing Code Here.
 ``` 
+<br>
 
 ### Model Selection <a name="MS"></a>
 ```python
 Model Selection Code Here.
 ``` 
+<br>
 
 **You have to copy in output/figures from the notebooks.**
-
-
+<br><br>
 
 ## Analysis <a name="Analysis"></a>
 
@@ -87,12 +100,14 @@ More analysis here.
 ![](pics/plot3.png)
 <br><br>
 More analysis.
-
+<br>
+<br>
 ## Conclusion <a name="conclusion"></a>
 
 xxx
 
 
+<br>
 
 ## About the Team <a name="about"></a>
 
