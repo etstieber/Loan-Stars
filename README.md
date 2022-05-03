@@ -68,19 +68,22 @@ EDA is crucial to prepare data for machine learning. Above are main examples of 
 Below are some examples of **_Visual_** EDA that we did to get a better sense of how variables relate to each other and observe major trends.
 
 ![](pics/int.png)
-<br><br>
+<br>
 Loans that are defaulted have a higher interest rate, generally.
 <br><br>
+
 ![](pics/grade.png)
-<br><br>
+<br>
 Doesn't seem to be any noticeable trends in loan grade and defaults.
 <br><br>
+
 ![](pics/len.png)
-<br><br>
+<br>
 Longer loans by far have more defaults but also by far more loans.
 <br><br>
+
 ![](pics/infl.png)
-<br><br>
+<br>
 Inflationary trends over time.
 <br><br>
 
