@@ -175,16 +175,20 @@ grid_search = GridSearchCV(estimator = pipe,
 results = grid_search.fit(X_train,y_train)
 ``` 
 We created a pipeline to grid search with, and defined paramters. We used feature selection with "Kbest" and conducted a grid search using default CV of 5. We fit on the train data and outputted best estimator results which showed that no feature selection yielded the highest mean test score.
+
+You can see the full Base_Data_model [here](https://github.com/LeDataSciFi/project-loan-stars/blob/main/Base_Data_Model.ipynb).
 <br><br>
 ### Initial Macro Model <a name="IM"></a>
 ```python
 Code Here.
 ``` 
+You can see the full Macro_Data_model [here](https://github.com/LeDataSciFi/project-loan-stars/blob/main/Macro_Data_model.ipynb).
 <br><br>
 ### Interaction Macro Model <a name="IMM"></a>
 ```python
 Code Here.
 ``` 
+You can see the full Macro2_Model [here](https://github.com/LeDataSciFi/project-loan-stars/blob/main/Macro2_Model.ipynb).
 <br><br>
 ## Analysis <a name="Analysis"></a>
 
