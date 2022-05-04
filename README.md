@@ -10,7 +10,8 @@ This website showcases our final project for FIN 377 - Data Science for Finance 
     2. [EDA](#EDA)
     3. [Pre-processing](#PP)
     4. [Base Model](#BM)
-    5. [Macro Model](#MM)
+    5. [Initial Macro Model](#IM)
+    6. [Interaction Macro Model](#IMM)
 3. [Analysis](#Analysis)
 4. [About the Team](#about)
 <br><br>
@@ -175,30 +176,17 @@ results = grid_search.fit(X_train,y_train)
 ``` 
 We created a pipeline to grid search with, and defined paramters. We used feature selection with "Kbest" and conducted a grid search using default CV of 5. We fit on the train data and outputted best estimator results which showed that no feature selection yielded the highest mean test score.
 <br><br>
-### Macro Model <a name="MM"></a>
+### Initial Macro Model <a name="IM"></a>
 ```python
-Model Selection Code Here.
+Code Here.
+``` 
+<br><br>
+### Interaction Macro Model <a name="IMM"></a>
+```python
+Code Here.
 ``` 
 <br><br>
 ## Analysis <a name="Analysis"></a>
-
-Here are some graphs that we created in our analysis. We saved them to the `pics/` subfolder and include them via the usual markdown syntax for pictures.
-
-![](pics/plot1.png)
-<br><br>
-Some analysis here
-<br><br>
-![](pics/plot2.png)
-<br><br>
-More analysis here.
-<br><br>
-![](pics/plot3.png)
-<br><br>
-More analysis.
-<br><br>
-## Conclusion <a name="conclusion"></a>
-
-xxx
 
 
 <br><br>
