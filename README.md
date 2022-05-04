@@ -117,8 +117,10 @@ print(classification_report(y_test, y_pred))
 ConfusionMatrixDisplay.from_estimator(logit, X_test, y_test)
 ```
 We creaated a logit model using the preprocessing pipeline, fit it to the training data, and predicted y test with our base model. We outputted the classification report and the confusion matrix for the model which can be seen below.
-![](pics/bp.png)
-<br>
+<br><br>
+![](pics/bp.jpg)
+<br><br>
+Next:
 ```python
 def custom_prof_score(y, y_pred, roa=0.02, haircut=0.20):
     """
@@ -169,6 +171,7 @@ grid_search = GridSearchCV(estimator = pipe,
 
 results = grid_search.fit(X_train,y_train)
 ``` 
+We defined a profit function that we wanted to focus on as we are maximizing profit for a lending company. We created a pipeline to grid search with, and defined paramters. We used feature selection and searched grid using default CV of 5. We fit on the train data and outputted best estimator results which showed that no feature selection yielded the highest mean test score.
 <br><br>
 ### Macro Model <a name="MM"></a>
 ```python
