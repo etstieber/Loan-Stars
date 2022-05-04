@@ -180,8 +180,59 @@ You can see the full Base_Data_model [here](https://github.com/LeDataSciFi/proje
 <br><br>
 ### Initial Macro Model <a name="IM"></a>
 ```python
-Code Here.
-``` 
+lending = pd.read_csv("dev/lending_merge.csv")
+```
+This is truly the main difference between the macro model and the base model. Everything else was conducted and measured in the same way (pipelines, parameters, grid search, etc) and resulted in a lower mean test score than the base model with the same, best model of passthrough of feature selection and creation.
+
+The macro-merged data was created using some of the following code:
+```python
+lending = pd.read_csv("input/lending_data.csv")
+inflation_exp = pd.read_csv('input/inflation_exp.csv')
+state_fips = pd.read_csv('dev/state_fips.csv')
+med_inc = pd.read_csv('dev/med_inc.csv')
+mean_inc = pd.read_csv('dev/mean_inc.csv')
+state_unemp = pd.read_csv('dev/state_unemp.csv') 
+```
+Read in **all** of the data we want to combine
+
+```python
+lending['issue_d'] = pd.to_datetime(lending['issue_d'])
+lending_h = lending
+med_inc['DATE'] = pd.to_datetime(med_inc['DATE'])
+mean_inc['DATE'] = pd.to_datetime(mean_inc['DATE'])
+state_unemp['DATE'] = pd.to_datetime(state_unemp['DATE'])
+inflation_exp['DATE'] = pd.to_datetime(inflation_exp['DATE'])
+
+med_inc['year'] = med_inc['DATE'].dt.isocalendar().year
+mean_inc['year'] = mean_inc['DATE'].dt.isocalendar().year
+state_unemp['year'] = state_unemp['DATE'].dt.isocalendar().year
+inflation_exp['year'] = inflation_exp['DATE'].dt.isocalendar().year
+```
+Convert data so to have common types.
+```python
+lending_x["mean_inc"] = 0
+for i in range(400000, len(lending_x)):
+    for state in mean_inc.columns[1:-1]:
+        if state == lending_x["addr_state"][i]:
+            for year in mean_inc["year"]:
+                if year == lending_x["year"][i]:
+                    df = pd.DataFrame(mean_inc.loc[state_unemp['year'] == year])
+                    lending_x["mean_inc"][i] = df[state]
+```
+Agorithm used to index match annual data frm the macro datasets and add it to the client dataset.
+
+```python
+state_list = stfips.merge(state_list, on = "state", how  = "left")
+state_list["statecode"] = state_list["state"].astype(str)+state_list["code"].astype(str)
+
+inflation_yr = inflation_exp.groupby(['year']) ['T5YIE'].mean().to_frame()
+inflation_yr = inflation_yr.reset_index()
+
+lending_merge = lending_h.merge(inflation_yr, how = "left", on = 'year')
+```
+Finalize data and combine.
+
+
 You can see the full Macro_Data_model [here](https://github.com/LeDataSciFi/project-loan-stars/blob/main/Macro_Data_model.ipynb).
 <br><br>
 ### Interaction Macro Model <a name="IMM"></a>
