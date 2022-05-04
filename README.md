@@ -1,7 +1,6 @@
 # Loan Default Prediction
 
-This website showcases our final project for FIN 377 - Data Science for Finance course at Lehigh University. To see our complete analysis file, click [here](https://github.com/julioveracruz/testwebsite/blob/main/notebooks/example.ipynb).
-**update analysis file link**
+This website showcases our final project for FIN 377 - Data Science for Finance course at Lehigh University.
 <br>
 ## Table of contents
 1. [Introduction / Proposal](#introduction)
@@ -257,14 +256,22 @@ The model was conducted and asssessed the same way as prior models (pipelines, p
 You can see the full Macro2_Model [here](https://github.com/LeDataSciFi/project-loan-stars/blob/main/Macro2_Model.ipynb).
 <br><br>
 ## Analysis <a name="Analysis"></a>
-We attempted to best predict loan defaults using not only consumer lending data but also macro-economic variables/factors. In that we created our three models, only to arrive at our base data model doing the best. However, our progress by adjusting the macro model to include interaction variables gives us hope and further inspiration of what we _could_ create. In hindsight, of course the macro variables aren't going to be useful on their own as they don't tie to specific loans. We realized this and attempted to incorprate them into each loan to help the algorithm better predict defaults. With more time, perhaps different model types, and a better understanding of machine learning we are confident we could continue to develop the erged macro data into a strong machine learning algorithm.
+We attempted to best predict loan defaults using not only consumer lending data but also macro-economic variables/factors. In that we created our three models, only to arrive at our base data model doing the best. However, our progress by adjusting the macro model to include interaction variables gives us hope and further inspiration of what we _could_ create. In hindsight, of course the macro variables aren't going to be useful on their own as they don't tie to specific loans. We realized this and attempted to incorprate them into each loan to help the algorithm better predict defaults. With more time, perhaps different model types, and a better understanding of machine learning we are confident we could continue to develop the merged macro data into a strong machine learning algorithm.
 
-Wast / Colin type here.
-
-#### Coefficients
-![](pics/coef.jpg)
+### Resulting Test Matrices
+![](pics/BMM.jpg) 
+<br>
+The base model is the most "aggressive" model in that it predicts the _least_ amount of defaults, opening the door for the most profit. Having just the client data, it doesn't have broader market factors to be weary of in its predictions.
 <br><br>
-Wast / Colin type here.
+![](pics/MMM.jpg) 
+<br>
+The initial macro model is more "conservative", and the least profitable. We did not manipulate any of the macro variables other than standard imputing/dropping. The model seems to be very timid to market conditions resulting in an over-prediction of loan defaults. As a result, it correctly predicts more clients that would _actually_ default.
+<br><br>
+![](pics/MM2M.jpg)
+<br>
+Finally, the interaction macro model is the most "conservative". Despite being most conservative, it is not the least profitable. Of course, this is entirely dependent on the assumptions made in your profitability scoring. This model predicts the most loan defaults and subsequently the most correct actual loan defaults.
+
+
 <br><br>
 ## About the Team <a name="about"></a>
 
