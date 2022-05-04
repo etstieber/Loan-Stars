@@ -42,7 +42,7 @@ stfips = pd.read_csv("dev/state_fips.csv",skipinitialspace=True)
 state_list = pd.DataFrame(lending["addr_state"].unique())
 state_list = stfips.merge(state_list, on = "state", how  = "left")
 ``` 
-We read leanding data that we downloaded from kaggle. This is our main dataset and what we build off of to incorporate other variables for our algorithm. Additionally included is some of the add-on data and modifications such as inflation from FRED. You can see the full download_data notebook [here](https://github.com/LeDataSciFi/project-loan-stars/blob/main/download_data.ipynb).
+We read lending data that we downloaded from kaggle. This is our main dataset and what we build off of to incorporate other variables for our algorithm. Additionally included is some of the add-on data and modifications such as inflation from FRED. You can see the full download_data notebook [here](https://github.com/LeDataSciFi/project-loan-stars/blob/main/download_data.ipynb).
 <br><br>
 ### EDA - Exploratory Data Analysis <a name="EDA"></a>
 ```python
@@ -218,7 +218,7 @@ for i in range(400000, len(lending_x)):
                     df = pd.DataFrame(mean_inc.loc[state_unemp['year'] == year])
                     lending_x["mean_inc"][i] = df[state]
 ```
-Agorithm used to index match annual data frm the macro datasets and add it to the client dataset.
+Agorithm used to index match annual data from the macro datasets and add it to the client dataset.
 
 ```python
 state_list = stfips.merge(state_list, on = "state", how  = "left")
