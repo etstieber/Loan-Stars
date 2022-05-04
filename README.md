@@ -116,7 +116,7 @@ y_pred = logit.predict(X_test,)
 print(classification_report(y_test, y_pred))
 ConfusionMatrixDisplay.from_estimator(logit, X_test, y_test)
 ```
-We creaated a logit model using the preprocessing pipeline, fit it to the training data, and predicted y test with our base model. We outputted the classification report and the confusion matrix for the model which can be seen below.
+We created a logit model using the preprocessing pipeline, fit it to the training data, and predicted y test with our base model. We outputted the classification report and the confusion matrix for the model which can be seen below.
 <br><br>
 ![](pics/bp.jpg)
 <br><br>
