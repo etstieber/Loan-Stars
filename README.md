@@ -4,19 +4,18 @@ This website showcases our final project for FIN 377 - Data Science for Finance 
 **update analysis file link**
 <br>
 ## Table of contents
-1. [Introduction](#introduction)
+1. [Introduction / Proposal](#introduction)
 2. [Methodology](#meth)
     1. [Data Collection](#DC)
     2. [EDA](#EDA)
     3. [Pre-processing](#PP)
-    4. [Optimizing](#Op)
-    5. [Model Selection](#MS)
+    4. [Base Model](#BM)
+    5. [Macro Model](#MM)
 3. [Analysis](#Analysis)
-4. [Conclusion](#conclusion)
-5. [About the Team](#about)
+4. [About the Team](#about)
 <br><br>
 
-## Introduction  <a name="introduction"></a>
+## Introduction / Proposal <a name="introduction"></a>
 
 The main goal of this project is to explore machine learning models that can best predict loan defaults using data such as standard loan factors, macroeconomic data, and market conditions. 
 <br><br>
@@ -108,12 +107,70 @@ Exemplified is our pre-model adjustments and setup. We dropped default indicator
 
 Thus, we created our preprocessing pipe by using ColumnTransformer, combining the numerical pipe & features as well as the caategorical pipe & features, dropping the rest.
 <br><br>
-### Optimizing <a name="Op"></a>
+### Base Model <a name="BM"></a>
 ```python
-Optimizing Code Here.
+logit = make_pipeline(preproc_pipe, LogisticRegression(max_iter = 1000))
+logit.fit(X_train, y_train)
+
+y_pred = logit.predict(X_test,)
+print(classification_report(y_test, y_pred))
+ConfusionMatrixDisplay.from_estimator(logit, X_test, y_test)
+```
+We creaated a logit model using the preprocessing pipeline, fit it to the training data, and predicted y test with our base model. We outputted the classification report and the confusion matrix for the model which can be seen below.
+![](pics/bp.png)
+<br>
+```python
+def custom_prof_score(y, y_pred, roa=0.02, haircut=0.20):
+    """
+    Firm profit is this times the average loan size. We can
+    ignore that term for the purposes of maximization. 
+    """
+    TN = sum((y_pred == 0) & (y == 0))  # count loans made and actually paid back
+    FN = sum((y_pred == 0) & (y == 1))  # count loans made and actually defaulting
+    return TN * roa - FN * haircut
+
+
+# so that we can use the fcn in sklearn, "make a scorer" out of that function
+
+prof_score = make_scorer(custom_prof_score)
+
+pipe = Pipeline([('columntransformer',preproc_pipe),
+                 ('feature_create','passthrough'), 
+                 ('feature_select','passthrough'), 
+                 ('clf', LogisticRegression(class_weight='balanced', max_iter = 1000))
+                ])
+
+param_grid = [
+    
+    # baseline: last class's 3 variable logit, no feature creation or selection
+    {'columntransformer': [preproc_pipe]},
+    
+    # now, try different feature selection methods (no creation, logit as estimator)
+    dict(feature_select=['passthrough',
+                          SelectKBest(f_classif,k=10),
+                          SelectKBest(f_classif,k=20),
+                          SelectKBest(f_classif,k=30),
+                          ]),
+    
+    # now, try different feature creation methods (and possibly reduce the features after)
+    {'feature_create': [
+                        # this creates interactions between all variables
+                        'passthrough'],
+     'feature_select': ['passthrough']
+    },
+    
+]
+
+grid_search = GridSearchCV(estimator = pipe, 
+                           param_grid = param_grid,
+                           cv = 5, 
+                           scoring=prof_score
+                           )
+
+results = grid_search.fit(X_train,y_train)
 ``` 
 <br><br>
-### Model Selection <a name="MS"></a>
+### Macro Model <a name="MM"></a>
 ```python
 Model Selection Code Here.
 ``` 
