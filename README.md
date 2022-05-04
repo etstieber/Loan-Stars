@@ -257,7 +257,7 @@ The model was conducted and asssessed the same way as prior models (pipelines, p
 You can see the full Macro2_Model [here](https://github.com/LeDataSciFi/project-loan-stars/blob/main/Macro2_Model.ipynb).
 <br><br>
 ## Analysis <a name="Analysis"></a>
-
+	
 
 <br><br>
 ## About the Team <a name="about"></a>
