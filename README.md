@@ -237,8 +237,23 @@ You can see the full Macro_Data_model [here](https://github.com/LeDataSciFi/proj
 <br><br>
 ### Interaction Macro Model <a name="IMM"></a>
 ```python
-Code Here.
+mean_mean_inc = lending["mean_inc"].mean()
+mean_med_inc = lending["med_inc"].mean()
+for i in range(0,len(lending)):
+    if lending["mean_inc"][i]==0:
+        lending["mean_inc"][i] = mean_mean_inc
+    if lending["med_inc"][i]==0:
+        lending["med_inc"][i] = mean_med_inc
+
+lending["skew"] = (lending["mean_inc"]/lending["med_inc"]).round(2)
+lending["inc/mean"]= (lending["annual_inc"]/lending["mean_inc"]).round(2)
+lending["inc/client_mean"]=(lending["annual_inc"]/lending["annual_inc"].mean()).round(2)
+lending["inc/client_med"]=(lending["annual_inc"]/lending["annual_inc"].median()).round(2)
+lending["int-inf"] = lending["int_rate"]-lending["T5YIE"]
+lending.head(5)
 ``` 
+The model was conducted and asssessed the same way as prior models (pipelines, parameters, grid search, etc) _however_ we created these interactions into the data at the very beginning because we felt that the macro data was not being fully utilized as it wasn't related to specific clients. This was our attempted solution and it resulted in a slightly higher mean test score in teh same model type.
+
 You can see the full Macro2_Model [here](https://github.com/LeDataSciFi/project-loan-stars/blob/main/Macro2_Model.ipynb).
 <br><br>
 ## Analysis <a name="Analysis"></a>
