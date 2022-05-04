@@ -86,8 +86,27 @@ You can see the full status_report notebook of EDA [here](https://github.com/LeD
 <br><br>
 ### Pre-processing <a name="PP"></a>
 ```python
-PP Code Here.
+lend = lending.drop(['default_ind' ], axis = 1)
+rng = np.random.RandomState(0)
+
+X_train, X_test, y_train, y_test = train_test_split(lend, y, stratify = y, test_size = 0.2, random_state = rng)
+
+num_pipe = make_pipeline(SimpleImputer(), StandardScaler())
+cat_pipe = make_pipeline(OneHotEncoder(handle_unknown='ignore'))
+
+num_pipe_features = X_train.select_dtypes(include = "number").columns
+num_pipe_features = [e for e in num_pipe_features if e not in dont_use]
+
+preproc_pipe = ColumnTransformer(
+    transformers = [
+    ('num', num_pipe, num_pipe_features),
+    ('cat', cat_pipe, cats)],
+    remainder = 'drop'
+)
 ``` 
+Exemplified is our pre-model adjustments and setup. We dropped default indicator of course to avoid data leakage, and created random state. We split our data into testing and training data at a 80/20 split and stratified y to ensure the best representation of data. We created the number pipe using SimpleImputer and StandardScaler as usual, and the categorical pipe using OneHotEncoder. We selected numerical variables from the training data to be processed through the number pipe and vice versa, making sure to not use certain variables that we ruled out of our model.
+
+Thus, we created our preprocessing pipe by using ColumnTransformer, combining the numerical pipe & features as well as the caategorical pipe & features, dropping the rest.
 <br><br>
 ### Optimizing <a name="Op"></a>
 ```python
