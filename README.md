@@ -17,7 +17,13 @@ This website showcases our final project for FIN 377 - Data Science for Finance 
 
 ## Introduction / Proposal <a name="introduction"></a>
 
-The main goal of this project is to explore machine learning models that can best predict loan defaults using data such as standard loan factors, macroeconomic data, and market conditions. 
+The big question that we are trying to answer in our project is "How effectively can we use macroeconomic in conjunction with ordinary risk factors to effectively predict loan defaults?". Specifically, we will look at problems such as:
+
+- How do macroeconomic factors such as unemployment rates, that vary based on geography, relate to and effectively predict loan defaults within that region?
+- How do broad market conditions, such as inflation and changes in inflation, relate to and help predict loan defaults?
+- How do individual loan metrics such as LTV, interest rate, loan term, and loan amount relate to and predict loan defaults?
+- How does an individuals income, compared to the state median/mean gross income, relate to and predict loan deafults?
+- Our project will compare the performance of a baseline model that uses the variables in the base dataset to predict loan defaults with a model that uses additional macroeconomic variables discussed above. We will evaluate how well adding this external data to the model improves the variables, and carryout additional analysis on how these external variables affect the results (which help the least/most).
 <br><br>
 ## Methodology <a name="meth"></a>
 
@@ -26,8 +32,9 @@ We outlined and completed this project through steps of:
 - Data Collection
 - EDA
 - Pre-processing
-- Optimizing
-- Model Selection
+- Base Model
+- Initial Macro Model
+- Interaction Macro Model
 <br>
 
 ### Data Collection <a name="DC"></a>
@@ -42,7 +49,11 @@ stfips = pd.read_csv("dev/state_fips.csv",skipinitialspace=True)
 state_list = pd.DataFrame(lending["addr_state"].unique())
 state_list = stfips.merge(state_list, on = "state", how  = "left")
 ``` 
-We read lending data that we downloaded from kaggle. This is our main dataset and what we build off of to incorporate other variables for our algorithm. Additionally included is some of the add-on data and modifications such as inflation from FRED. You can see the full download_data notebook [here](https://github.com/LeDataSciFi/project-loan-stars/blob/main/download_data.ipynb).
+We read lending data that we downloaded from kaggle. This is our main dataset and what we build off of to incorporate other variables for our algorithm. Additionally included is some of the add-on data and modifications such as inflation from FRED. 
+
+![](pics/base_col.jpg)
+<br>
+You can see the full download_data notebook [here](https://github.com/LeDataSciFi/project-loan-stars/blob/main/download_data.ipynb).
 <br><br>
 ### EDA - Exploratory Data Analysis <a name="EDA"></a>
 ```python
@@ -183,6 +194,9 @@ lending = pd.read_csv("dev/lending_merge.csv")
 ```
 This is truly the main difference between the macro model and the base model. Everything else was conducted and measured in the same way (pipelines, parameters, grid search, etc) and resulted in a lower mean test score than the base model with the same, best model of passthrough of feature selection and creation.
 
+![](pics/m_col.jpg)
+<br>
+
 The macro-merged data was created using some of the following code:
 ```python
 lending = pd.read_csv("input/lending_data.csv")
@@ -252,6 +266,9 @@ lending["int-inf"] = lending["int_rate"]-lending["T5YIE"]
 lending.head(5)
 ``` 
 The model was conducted and asssessed the same way as prior models (pipelines, parameters, grid search, etc) _however_ we created these interactions into the data at the very beginning because we felt that the macro data was not being fully utilized as it wasn't related to specific clients. This was our attempted solution and it resulted in a slightly higher mean test score in teh same model type.
+
+![](pics/m2_col.jpg)
+<br>
 
 You can see the full Macro2_Model [here](https://github.com/LeDataSciFi/project-loan-stars/blob/main/Macro2_Model.ipynb).
 <br><br>
