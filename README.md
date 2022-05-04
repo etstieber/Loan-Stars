@@ -123,7 +123,7 @@ xxx
 <br><br>
 ## About the Team <a name="about"></a>
 
-<img src="pics/2.jpeg" alt="don" width="300"/>
+<img src="pics/Wasti.jpeg" alt="don" width="300"/>
 <br>
 Wasti is a Senior '22 Finance major with minors in Data Science and Mathematics. Upon graduation he will return to Lehigh as a Masters of Financial Engineering candidate.
 <br><br><br>
